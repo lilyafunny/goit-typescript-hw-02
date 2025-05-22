@@ -1,0 +1,16 @@
+.btnLoad {
+    width: 200px;
+    height: 40px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(100, 100, 232);
+    color: #fff;
+}
+
+.btnLoad:hover,
+:focus {
+    background-color: rgb(62, 62, 172);
+    color: #fff;
+}

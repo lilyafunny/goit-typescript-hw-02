@@ -1,0 +1,42 @@
+.header {
+    background-color: rgb(100, 100, 232);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.formInput {
+    height: 40px;
+    width: 300px;
+    margin-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+}
+
+.btnS {
+    height: 38px;
+    width: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+}
+
+.btnS:hover,
+:focus {
+    background-color: rgb(62, 62, 172);
+    color: #fff;
+}
+
+.formInput:hover,
+:focus {
+    color: black;
+    border: 2px solid rgb(62, 62, 172);
+    background-color: #fff;
+}
