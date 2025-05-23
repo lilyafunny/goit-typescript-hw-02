@@ -6,7 +6,7 @@ Modal.setAppElement('#root');
 type Status = {
     isOpen: boolean;
     onClose: () => void;
-    image: string;
+    image: string | null;
 
 }
 
@@ -18,6 +18,7 @@ const ImageModal: React.FC<Status> = ({ isOpen, onClose, image }) => {
             onClose()
         }
     };
+    if (!image) return null;
 
     return (
 
@@ -27,7 +28,7 @@ const ImageModal: React.FC<Status> = ({ isOpen, onClose, image }) => {
                 onRequestClose={onClose}
                 overlayClassName={s.overlay}
                 className={s.modal}
-                onClick={handleClose}
+                shouldCloseOnOverlayClick={true}
             >
                 <img src={image} className={s.img} />
             </Modal >
