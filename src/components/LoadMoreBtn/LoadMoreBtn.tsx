@@ -1,6 +1,10 @@
 import s from './LoadMoreBtn.module.css'
 
-const LoadMoreBtn = ({ onChangePage }) => {
+type Props = {
+    onChangePage: () => void;
+}
+
+const LoadMoreBtn: React.FC<Props> = ({ onChangePage }) => {
     return (
         <>
             <button className={s.btnLoad} onClick={onChangePage}>

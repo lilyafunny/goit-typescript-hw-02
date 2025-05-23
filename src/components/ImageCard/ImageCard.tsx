@@ -1,6 +1,14 @@
+import React from "react";
 import s from "./ImageCard.module.css"
+import { Photos } from "../../Services/api";
 
-const ImageCard = ({ item, onImageClick }) => {
+
+type Props = {
+    item: Photos;
+    onImageClick: (url: string) => void;
+};
+
+const ImageCard: React.FC<Props> = ({ item, onImageClick }) => {
 
     return (
 

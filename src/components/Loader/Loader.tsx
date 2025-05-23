@@ -1,7 +1,7 @@
 import { FallingLines } from "react-loader-spinner";
 import s from './Loader.module.css'
 
-const Loader = () => {
+const Loader: React.FC = () => {
     return (
         <div className={s.loader}>
             <FallingLines

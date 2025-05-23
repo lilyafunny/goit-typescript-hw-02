@@ -3,9 +3,16 @@ import s from './ImageModal.module.css'
 
 Modal.setAppElement('#root');
 
-const ImageModal = ({ isOpen, onClose, image }) => {
+type Status = {
+    isOpen: boolean;
+    onClose: () => void;
+    image: string;
 
-    const handleClose = (e) => {
+}
+
+const ImageModal: React.FC<Status> = ({ isOpen, onClose, image }) => {
+
+    const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
 
         if (e.target === e.currentTarget) {
             onClose()

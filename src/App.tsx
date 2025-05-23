@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchPhotos } from './Services/api';
 import Loader from './components/Loader/Loader';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage';
@@ -6,21 +6,20 @@ import ImageGallery from './components/ImageGallery/ImageGallery';
 import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn'
 import SearchBar from './components/SearchBar/SearchBar'
 import ImageModal from './components/ImageModal/ImageModal'
+import { Photos } from './Services/api'
 
-const App = () => {
+const App: React.FC = () => {
 
-
-
-  const [photos, setPhotos] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [page, setPage] = useState(1);
-  const [query, setQuery] = useState('');
-
+  const [photos, setPhotos] = useState < Photos[] > ([]);
+  const [isLoading, setIsLoading] = useState < boolean > (false);
+  const [isError, setIsError] = useState < boolean > (false);
+  const [page, setPage] = useState < number > (1);
+  const [query, setQuery] = useState < string > ('');
 
 
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [selectedImage, setSelectedImage] = useState < string | null > (null);
+  const [isModalOpen, setIsModalOpen] = useState < boolean > (false);
 
   useEffect(() => {
 
@@ -47,11 +46,11 @@ const App = () => {
   }, [page, query]);
 
 
-  const handleChangePage = () => {
+  const handleChangePage = (): void => {
     setPage(prev => prev + 1);
-  }
+  };
 
-  const handleChangeQuery = (newQuery) => {
+  const handleChangeQuery = (newQuery: string): void => {
     if (newQuery === query) {
       return;
     }
@@ -61,12 +60,12 @@ const App = () => {
   }
 
 
-  const handleClickImage = (imageUrl) => {
+  const handleClickImage = (imageUrl: string): void => {
     setSelectedImage(imageUrl);
     setIsModalOpen(true);
   }
 
-  const handleClickImageClose = () => {
+  const handleClickImageClose = (): void => {
     setIsModalOpen(false);
     setSelectedImage(null);
   }

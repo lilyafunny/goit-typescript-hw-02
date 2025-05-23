@@ -1,7 +1,14 @@
 import ImageCard from "../ImageCard/ImageCard"
 import s from "./ImageGallery.module.css"
+import { Photos } from "../../Services/api";
 
-const ImageGallery = ({ photos, onImageClick }) => {
+
+type Props = {
+    photos: Photos[];
+    onImageClick: (url: string) => void;
+}
+
+const ImageGallery = ({ photos, onImageClick }: Props) => {
 
     return (
 

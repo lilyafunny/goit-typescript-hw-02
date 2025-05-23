@@ -1,6 +1,6 @@
+import { FC } from "react";
 
-
-const ErrorMessage = () => {
+const ErrorMessage: FC = () => {
     return (
         <>
             <h2>Oooops, try again...</h2>
